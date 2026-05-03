@@ -9,9 +9,12 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+import kotlinx.coroutines.flow.first
+
 @HiltViewModel
 class SplashViewModel @Inject constructor(
-    private val userPreferences: UserPreferences
+    private val userPreferences: UserPreferences,
+    private val authRepository: com.habittracker.domain.repository.AuthRepository
 ) : ViewModel() {
 
     private val _isLoading = MutableStateFlow(true)
@@ -24,7 +27,12 @@ class SplashViewModel @Inject constructor(
         viewModelScope.launch {
             userPreferences.onboardingCompleted.collect { hasSeen ->
                 if (hasSeen) {
-                    _startDestination.value = "dashboard"
+                    val user = authRepository.currentUser.first()
+                    if (user != null) {
+                        _startDestination.value = "dashboard"
+                    } else {
+                        _startDestination.value = "login"
+                    }
                 } else {
                     _startDestination.value = "onboarding"
                 }

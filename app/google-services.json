@@ -1,31 +1,36 @@
 {
   "project_info": {
-    "project_number": "123456789012",
-    "project_id": "habit-tracker-dummy",
-    "storage_bucket": "habit-tracker-dummy.appspot.com"
+    "project_number": "248953062735",
+    "project_id": "habittracker-pro-42578",
+    "storage_bucket": "habittracker-pro-42578.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:123456789012:android:abcdef1234567890",
+        "mobilesdk_app_id": "1:248953062735:android:699a2e3de45e77e43b313a",
         "android_client_info": {
           "package_name": "com.habittracker"
         }
       },
       "oauth_client": [
         {
-          "client_id": "dummy-client-id.apps.googleusercontent.com",
+          "client_id": "248953062735-v9l4mbcht3l396crhq0fd5pc4j21rrci.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "dummy-api-key"
+          "current_key": "AIzaSyDEXdQawaWkSMWqsBMuXAzs-33qUewir7A"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "248953062735-v9l4mbcht3l396crhq0fd5pc4j21rrci.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

@@ -76,10 +76,31 @@ fun HabitTrackerNavGraph() {
             }
             composable("onboarding") {
                 com.habittracker.presentation.onboarding.OnboardingScreen(onFinishOnboarding = {
-                    navController.navigate("dashboard") {
+                    navController.navigate("login") {
                         popUpTo("onboarding") { inclusive = true }
                     }
                 })
+            }
+            composable("login") {
+                com.habittracker.presentation.auth.LoginScreen(
+                    onNavigateToRegister = { navController.navigate("register") },
+                    onLoginSuccess = {
+                        navController.navigate("dashboard") {
+                            popUpTo("login") { inclusive = true }
+                        }
+                    }
+                )
+            }
+            composable("register") {
+                com.habittracker.presentation.auth.RegisterScreen(
+                    onNavigateBackToLogin = { navController.popBackStack() },
+                    onRegisterSuccess = {
+                        navController.navigate("dashboard") {
+                            popUpTo("register") { inclusive = true }
+                            popUpTo("login") { inclusive = true }
+                        }
+                    }
+                )
             }
             composable("dashboard") {
                 DashboardScreen(

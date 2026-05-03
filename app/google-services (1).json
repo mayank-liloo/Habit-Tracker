@@ -12,7 +12,12 @@
           "package_name": "com.habittracker"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "248953062735-v9l4mbcht3l396crhq0fd5pc4j21rrci.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDEXdQawaWkSMWqsBMuXAzs-33qUewir7A"
@@ -20,7 +25,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "248953062735-v9l4mbcht3l396crhq0fd5pc4j21rrci.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
