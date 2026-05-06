@@ -12,6 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.graphics.Color
+import androidx.compose.foundation.layout.size
 import kotlinx.coroutines.delay
 
 @Composable
@@ -34,16 +39,19 @@ fun SplashScreen(
         onSplashComplete()
     }
 
+    val SplashBlue = Color(0xFF2B95F5)
+
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background),
+            .background(SplashBlue),
         contentAlignment = Alignment.Center
     ) {
-        androidx.compose.material3.Text(
-            text = "✨",
-            style = MaterialTheme.typography.displayLarge.copy(fontSize = 100.sp),
+        Image(
+            painter = painterResource(id = com.habittracker.R.drawable.splash_logo),
+            contentDescription = "App Logo",
             modifier = Modifier
+                .size(200.dp)
                 .scale(scaleAnim.value)
                 .alpha(alphaAnim.value)
         )
